@@ -1,66 +1,26 @@
-## Foundry
+# Task1\* & Task2 Liquidity Tests
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+## Prerequisites
 
-Foundry consists of:
+- [Foundry](https://github.com/foundry-rs/foundry) (`forge` CLI)
+- BSC RPC URL (archive or public node with fork support)
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+### Quick start
 
-## Documentation
+1. Clone reo & setup env:
 
-https://book.getfoundry.sh/
+   ```bash
+   git clone <repo>
+   cd <repo>
+   forge install
+   ```
 
-## Usage
+2. Add BSC RPC URL in .env:
 
-### Build
-
-```shell
-$ forge build
+```cp .env.example .env
+# Open it .env and substitute:
+# # BSC_RNC_URL=https://YOUR_BSC_RPC_URL
 ```
 
-### Test
-
-```shell
-$ forge test
-```
-
-### Format
-
-```shell
-$ forge fmt
-```
-
-### Gas Snapshots
-
-```shell
-$ forge snapshot
-```
-
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+3. Try test:
+   `forge test -vv`

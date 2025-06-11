@@ -1,3 +1,12 @@
 [submodule "lib/forge-std"]
 	path = lib/forge-std
 	url = https://github.com/foundry-rs/forge-std
+[submodule "lib/pancake-swap-periphery"]
+	path = lib/pancake-swap-periphery
+	url = https://github.com/pancakeswap/pancake-swap-periphery
+[submodule "lib/pancake-smart-contracts"]
+	path = lib/pancake-smart-contracts
+	url = https://github.com/pancakeswap/pancake-smart-contracts
+[submodule "lib/openzeppelin-contracts"]
+	path = lib/openzeppelin-contracts
+	url = https://github.com/OpenZeppelin/openzeppelin-contracts
