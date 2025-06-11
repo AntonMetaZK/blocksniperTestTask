@@ -45,15 +45,10 @@ contract Task1FactoryForkTest is Test {
         console2.log("Max ETH to spend (msg.value):", 1 ether / 1e18, "BNB");
 
         uint256 balBefore = address(this).balance;
-        uint256[] memory amts = task.buyExactOut{value: 1 ether}(
-            amountOut,
-            path,
-            address(this),
-            deadline
-        );
+        uint256[] memory amts = task.buyExactOut{value: 1 ether}(amountOut, path, address(this), deadline);
 
         console2.log("Call returned amts:");
-        for (uint i = 0; i < amts.length; i++) {
+        for (uint256 i = 0; i < amts.length; i++) {
             console2.log("  amts[", i, "] =", amts[i]);
         }
 
@@ -62,11 +57,7 @@ contract Task1FactoryForkTest is Test {
         console2.log("Final ETH balance:", balAfter);
         console2.log("Final BUSD balance:", tokenAfter);
 
-        assertEq(
-            IERC20(BUSD).balanceOf(address(this)),
-            amountOut,
-            "wrong token amt"
-        );
+        assertEq(IERC20(BUSD).balanceOf(address(this)), amountOut, "wrong token amt");
         assertGe(balBefore - amts[0], 0, "no refund");
         console2.log("Test completed OK!");
     }
